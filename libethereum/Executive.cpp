@@ -25,7 +25,7 @@
 #include <libevm/LegacyVM.h>
 #include <libevm/VMFactory.h>
 
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
 #include <json/json.h>
 #endif
 #include <boost/timer.hpp>
@@ -62,7 +62,7 @@ std::string dumpStorage(ExtVM const& _ext)
 
 }  // namespace
 
-#ifdef QTUM_BUILD
+#ifdef SICASH_BUILD
 StandardTrace::StandardTrace()
 {}
 #else
@@ -95,7 +95,7 @@ bool changesStorage(Instruction _inst)
 void StandardTrace::operator()(uint64_t _steps, uint64_t PC, Instruction inst, bigint newMemSize,
     bigint gasCost, bigint gas, VMFace const* _vm, ExtVMFace const* voidExt)
 {
-#ifdef QTUM_BUILD
+#ifdef SICASH_BUILD
     return;
 #else
     (void)_steps;
@@ -176,7 +176,7 @@ void StandardTrace::operator()(uint64_t _steps, uint64_t PC, Instruction inst, b
 
 std::string StandardTrace::styledJson() const
 {
-#ifdef QTUM_BUILD
+#ifdef SICASH_BUILD
     return "";
 #else
     return Json::StyledWriter().write(m_trace);
@@ -185,7 +185,7 @@ std::string StandardTrace::styledJson() const
 
 string StandardTrace::multilineTrace() const
 {
-#ifdef QTUM_BUILD
+#ifdef SICASH_BUILD
     return "";
 #else
     if (m_trace.empty())
