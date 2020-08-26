@@ -18,7 +18,7 @@
 #include "DBFactory.h"
 #include "FileSystem.h"
 #include "LevelDB.h"
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
 #include "RocksDB.h"
 #endif
 #include "MemoryDB.h"
@@ -50,7 +50,7 @@ struct DBKindTableEntry
 /// so linear search only to parse command line arguments is not a problem.
 DBKindTableEntry dbKindsTable[] = {
     {DatabaseKind::LevelDB, "leveldb"},
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
     {DatabaseKind::RocksDB, "rocksdb"},
 #endif
     {DatabaseKind::MemoryDB, "memorydb"},
@@ -86,7 +86,7 @@ bool isDiskDatabase()
     switch (g_kind)
     {
         case DatabaseKind::LevelDB:
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
         case DatabaseKind::RocksDB:
 #endif
             return true;
@@ -160,7 +160,7 @@ std::unique_ptr<DatabaseFace> DBFactory::create(DatabaseKind _kind, fs::path con
     case DatabaseKind::LevelDB:
         return std::unique_ptr<DatabaseFace>(new LevelDB(_path));
         break;
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
     case DatabaseKind::RocksDB:
         return std::unique_ptr<DatabaseFace>(new RocksDB(_path));
         break;

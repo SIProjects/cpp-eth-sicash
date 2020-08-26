@@ -20,7 +20,7 @@
 #include <libethcore/Common.h>
 #include <libevm/VMFace.h>
 
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
 #include <json/json.h>
 #endif
 #include <functional>
@@ -63,7 +63,7 @@ public:
     void setShowMnemonics() { m_showMnemonics = true; }
     void setOptions(DebugOptions _options) { m_options = _options; }
 
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
     Json::Value jsonValue() const { return m_trace; }
 #endif
     std::string styledJson() const;
@@ -80,7 +80,7 @@ public:
 private:
     bool m_showMnemonics = false;
     std::vector<Instruction> m_lastInst;
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
     Json::Value m_trace;
 #endif
     DebugOptions m_options;

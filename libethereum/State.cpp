@@ -27,7 +27,7 @@
 #include "TransactionQueue.h"
 #include <libdevcore/Assertions.h>
 #include <libdevcore/DBFactory.h>
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
 #include <libdevcore/TrieHash.h>
 #endif
 #include <libevm/VMFactory.h>

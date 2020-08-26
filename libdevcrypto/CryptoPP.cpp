@@ -27,7 +27,7 @@
 #include <libdevcore/Assertions.h>
 #include <libdevcore/SHA3.h>
 
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
 static_assert(CRYPTOPP_VERSION == 565, "Wrong Crypto++ version");
 #endif
 

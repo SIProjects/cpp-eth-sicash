@@ -125,7 +125,7 @@ void VM::caseCreate()
     updateMem(memNeed(initOff, initSize));
     updateIOGas();
 
-#ifdef QTUM_BUILD
+#ifdef SICASH_BUILD
     if (endowment) BOOST_THROW_EXCEPTION(CreateWithValue());
 #endif
 

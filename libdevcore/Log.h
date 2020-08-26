@@ -23,7 +23,7 @@
 #include <string>
 #include <vector>
 
-#ifndef QTUM_BUILD
+#ifndef SICASH_BUILD
 
 #include <boost/log/attributes/scoped_attribute.hpp>
 #include <boost/log/sources/global_logger_storage.hpp>
