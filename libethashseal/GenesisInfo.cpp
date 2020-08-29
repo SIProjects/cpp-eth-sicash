@@ -56,12 +56,12 @@ std::string const& dev::eth::genesisInfo(Network _n)
     switch (_n)
     {
     //Client genesis
-    case Network::sicashMainNetwork: return c_genesisInfoQtumMainNetwork;
+    case Network::sicashMainNetwork: return c_genesisInfoSICashMainNetwork;
     case Network::MainNetwork: return c_genesisInfoMainNetwork;
     case Network::Ropsten: return c_genesisInfoRopsten;
 
     //Test genesis
-    case Network::sicashTestNetwork: return c_genesisInfoQtumTestNetwork;
+    case Network::sicashTestNetwork: return c_genesisInfoSICashTestNetwork;
     case Network::MainNetworkTest: return c_genesisInfoMainNetworkTest;
     case Network::MainNetworkNoProofTest: return c_genesisInfoMainNetworkNoProofTest;
     case Network::FrontierNoProofTest: return c_genesisInfoFrontierNoProofTest;
@@ -101,8 +101,8 @@ h256 const& dev::eth::genesisStateRoot(Network _n)
 {
     switch (_n)
     {
-    case Network::sicashMainNetwork: return c_genesisStateRootQtumMainNetwork;
-    case Network::sicashTestNetwork: return c_genesisStateRootQtumTestNetwork;
+    case Network::sicashMainNetwork: return c_genesisStateRootSICashMainNetwork;
+    case Network::sicashTestNetwork: return c_genesisStateRootSICashTestNetwork;
     case Network::MainNetwork: return c_genesisStateRootMainNetwork;
     case Network::Ropsten:
     case Network::MainNetworkTest:

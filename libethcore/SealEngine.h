@@ -93,9 +93,9 @@ public:
 	virtual std::pair<bool, bytes> executePrecompiled(Address const& _a, bytesConstRef _in, u256 const&) const { return m_params.precompiled.at(_a).execute(_in); }
 
 ////////////////////////////////////////////////////////////// // sicash
-	void setQtumSchedule(EVMSchedule _sicashSchedule) const { sicashSchedule = _sicashSchedule; }
+	void setSICashSchedule(EVMSchedule _sicashSchedule) const { sicashSchedule = _sicashSchedule; }
 
-	EVMSchedule& getQtumSchedule() const { return sicashSchedule; }
+	EVMSchedule& getSICashSchedule() const { return sicashSchedule; }
 
 	//deleteAddresses is a set that keeps track of accounts that were inserted as part of sending to pubkeyhash addresses
 	//This is added to when doing a CALL to a non-existent address (if the account does not exist, it assumes you're sending to pubkeyhash)
